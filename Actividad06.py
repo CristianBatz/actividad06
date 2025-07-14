@@ -40,7 +40,7 @@ while opcion != 5:
                 "categoria": categoria,
                 "talla": talla,
                 "precio": precio,
-                "stock": stock,
+                "stock": stock
             }
 
     elif opcion == 2:
