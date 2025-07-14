@@ -8,7 +8,12 @@ while opcion != 5:
     print("3. Valor total del inventario")
     print("4. Cantidad de productos")
     print("5. Salir")
-    opcion = int(input("Seleccione una opcion: "))
+    try:
+        opcion = int(input("Seleccione una opcion: "))
+    except ValueError:
+        print("Opcion no valida")
+        opcion = 0
+        continue
 
     if opcion == 1:
         print("=== Productos ===")
@@ -20,8 +25,8 @@ while opcion != 5:
                 print("ya hay un producto con ese codigo, vuelva a intentarlo")
                 codigo = input("Ingrese el codigo del producto: ")
             nombre = input("Ingrese el nombre del producto: ")
-            categoria = input("Ingrese la categoria del producto: ")
-            talla = input("Ingrese la talla del producto: ")
+            categoria = input("Ingrese la categoria del producto (Hombre, Mujer, Niño): ")
+            talla = input("Ingrese la talla del producto (S, M, L, XL): ")
             precio = float(input("Ingrese el precio del producto: "))
             while precio <=0:
                 print("El precio debe ser mayor a 0")
@@ -56,7 +61,7 @@ while opcion != 5:
         print("=== Valor total del inventario ===")
         for datos in productos.values():
             total += datos['stock'] * datos['precio']
-        print(f"Valor total del inventario es de: {total}")
+        print(f"Valor total del inventario es de:Q.{total}")
 
     elif opcion == 4:
         print("=== Cantidad de productos ===")
